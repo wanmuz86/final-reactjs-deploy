@@ -30,7 +30,7 @@ const Header = () => {
                     </ul>
                     <div className="d-flex">
 
-                        <Link to="/cart"><button className="btn btn-outline-success me-2"><i class="bi bi-cart"></i></button></Link>
+                        <Link to="/cart"><button className="btn btn-outline-success me-2"><i className="bi bi-cart"></i></button></Link>
                     </div>
                 </div>
             </div>
