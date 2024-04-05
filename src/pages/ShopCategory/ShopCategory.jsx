@@ -1,9 +1,11 @@
 import React from 'react'
 import './ShopCategory.css';
-
-const ShopCategory = () => {
+import Banner from '../../components/Banner/Banner';
+const ShopCategory = ({image,title}) => {
   return (
-    <div>ShopCategory</div>
+    <div>
+      <Banner image={image} title={title}/>
+    </div>
   )
 }
 

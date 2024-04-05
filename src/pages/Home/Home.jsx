@@ -1,9 +1,14 @@
 import React from 'react'
 import './Home.css';
+import Banner from '../../components/Banner/Banner';
 
-const Home = () => {
+const Home = ({image, title}) => {
+  const subtitle = "Shop until you drop";
+
   return (
-    <div>Home</div>
+    <div>
+      <Banner image={image} title={title} subtitle={subtitle}/>
+    </div>
   )
 }
 
