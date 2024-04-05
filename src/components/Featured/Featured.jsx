@@ -9,21 +9,21 @@ const Featured = () => {
     const { data, loading, error } = useFetch(url);
 
     return (
-        <div className='container'>
+        <div className='container my-3'>
+            <h2>Featured products</h2>
             {
                 error ?
                     <p>Something is wrong</p>
                     : loading
                         ? <p>Loading...</p>
                         :
-                      <div className='row'>
+                        <div className='row'>
                             {
                                 data?.map((val) => <div className='col-2' key={val.id}>
-                                    <Card item={val}/> 
+                                    <Card item={val} />
                                 </div>)
                             }
-                        </div>
-
+                </div>
             }
         </div>
     )

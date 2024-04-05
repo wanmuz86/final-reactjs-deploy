@@ -11,46 +11,49 @@ import Home from './pages/Home/Home.jsx'
 import banner1 from './assets/banner1.jpg'
 import banner2 from './assets/banner2.jpg'
 import banner3 from './assets/banner3.jpg'
+import { CartProvider } from './context/CartContext.jsx'
 
 const router = createBrowserRouter([
   {
-    path:"/",
-    element:<App/>,
-    children:[
+    path: "/",
+    element: <App />,
+    children: [
       {
-        path:"",
-        element:<Home image={banner1} title="Shoppr"/>
+        path: "",
+        element: <Home image={banner1} title="Shoppr" />
       },
       {
-        path:"categories/electronics",
-        element:<ShopCategory image={banner2} title="Electronics"/>
+        path: "categories/electronics",
+        element: <ShopCategory image={banner2} title="Electronics" />
       },
       {
-        path:"categories/jewelery",
-        element:<ShopCategory image={banner3} title="Jewelery"/>
+        path: "categories/jewelery",
+        element: <ShopCategory image={banner3} title="Jewelery" />
       },
       {
-        path:"categories/men's clothing",
-        element:<ShopCategory image={banner1} title="Men's clothing"/>
+        path: "categories/men's clothing",
+        element: <ShopCategory image={banner1} title="Men's clothing" />
       },
       {
-        path:"categories/women's clothing",
-        element:<ShopCategory image={banner2} title="Women's clothing"/>
+        path: "categories/women's clothing",
+        element: <ShopCategory image={banner2} title="Women's clothing" />
       },
       {
-        path:"products/:id",
-        element:<Product/>
+        path: "products/:id",
+        element: <Product />
       },
       {
-        path:"cart",
-        element:<Cart/>
+        path: "cart",
+        element: <Cart />
       }
     ]
   }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <RouterProvider router={router}/>
-  </React.StrictMode>,
+ 
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
+
 )
