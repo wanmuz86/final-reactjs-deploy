@@ -4,7 +4,7 @@ import { useCart } from '../../context/CartContext';
 import CartItem from '../../components/CartItem/CartItem';
 
 const Cart = () => {
-  const { state, dispatch } = useCart();
+  const { state, dispatch, totalPrice } = useCart();
   return (
     <div className='container py-3'>
       <h2>Cart</h2>
@@ -17,6 +17,9 @@ const Cart = () => {
 
       <hr />
       <button onClick={() => dispatch({ type: 'EMPTY_CART' })}>Empty Cart</button>
+      <hr />
+      <h3>Total Price</h3>
+      <h5>USD {totalPrice.toFixed(2)}</h5>
     </div>
   )
 }
